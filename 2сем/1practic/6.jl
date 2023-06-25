@@ -10,14 +10,3 @@ struct Polynom{T}
 end
 
 p = Polynom([1, 2, 3])
-
-import Base: +, -, *, show
-
-#Cложение
-+(a::Polynom{T}, b::Polynom{T}) where {T<:Number} = Polynom{T}(a.coeffs + b.coeffs)
-
-#Вычитание
--(a::Polynom{T}, b::Polynom{T}) where {T<:Number} = Polynom{T}(a.coeffs - b.coeffs)
-
-#Унарный минус
--(a::Polynom{T}) where {T<:Number} = Polynom{T}(-a.coeffs)
